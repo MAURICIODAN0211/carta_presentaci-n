@@ -1,0 +1,107 @@
+:root {
+  --azul: #1F313B;
+  --morado: #383852;
+  --vino: #7B4259;
+  --rosa: #B94E56;
+  --rojo: #BE4039;
+  --vino-oscuro: #683536;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 16px;
+  background: var(--morado);
+  color: var(--azul);
+  font-family: Arial, sans-serif;
+}
+
+.carta {
+  width: min(90vw, 1000px);
+  min-height: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-top: 8px solid var(--rojo);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 28px #1F313B66;
+}
+
+.encabezado {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 30px 42px;
+  border-bottom: 2px solid var(--rosa);
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+h1 {
+  margin: 0;
+  color: var(--azul);
+  font-size: 2rem;
+}
+
+.contenido {
+  flex: 1;
+  padding: 40px 54px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.contenido h2 {
+  color: var(--vino);
+}
+
+.firma {
+  margin-top: 36px;
+}
+
+.firma p {
+  margin: 4px 0;
+}
+
+.nombre-firma {
+  color: var(--rojo);
+  font-family: cursive;
+  font-size: 1.5rem;
+}
+
+footer {
+  padding: 20px 28px;
+  background: var(--azul);
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .carta {
+    width: 100%;
+    min-height: 600px;
+  }
+
+  .encabezado {
+    padding: 22px;
+  }
+
+  .contenido {
+    padding: 28px 24px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+}
