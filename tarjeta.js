@@ -8,6 +8,7 @@ fetch("persona.json")
   })
   .then((datos) => {
     document.getElementById("logo").src = datos.logo;
+    document.getElementById("firma").src = datos.firma;
     document.getElementById("empresa").textContent = datos.empresa;
     document.getElementById("departamento").textContent =
       datos.departamento;
