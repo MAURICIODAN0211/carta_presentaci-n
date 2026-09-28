@@ -1,7 +1,9 @@
 fetch("./data/datos.json")
   .then((respuesta) => {
     if (!respuesta.ok) {
-      throw new Error("No se pudo cargar persona.json");
+      throw new Error(
+        `No se pudo cargar datos.json. Código HTTP: ${respuesta.status}`
+      );
     }
 
     return respuesta.json();
@@ -9,12 +11,12 @@ fetch("./data/datos.json")
   .then((datos) => {
     document.getElementById("logo").src = datos.logo;
     document.getElementById("firma").src = datos.firma;
+
     document.getElementById("empresa").textContent = datos.empresa;
     document.getElementById("departamento").textContent =
       datos.departamento;
     document.getElementById("empleado").textContent = datos.empleado;
     document.getElementById("mensaje").textContent = datos.mensaje;
-    document.getElementById("firma").textContent = datos.firma;
     document.getElementById("remitente").textContent = datos.remitente;
     document.getElementById("cargo").textContent = datos.cargo;
 
@@ -24,6 +26,7 @@ fetch("./data/datos.json")
   })
   .catch((error) => {
     console.error(error);
+
     document.getElementById("mensaje").textContent =
-      "No se pudieron cargar los datos. Revisa los nombres de los archivos.";
+      "No se pudieron cargar los datos. Revisa los nombres y las rutas de los archivos.";
   });
