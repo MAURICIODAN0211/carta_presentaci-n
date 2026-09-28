@@ -1,4 +1,4 @@
-fetch("persona.json")
+fetch("./data/datos.json")
   .then((respuesta) => {
     if (!respuesta.ok) {
       throw new Error("No se pudo cargar persona.json");
